@@ -13,10 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dev', function () {
+
+    dd(\App\Http\Controllers\ContactController::class);
+
+    dd('Dev');
+});
+
+// Contact Form
+// 1st route - show the form
+Route::get('/contact', [
+    App\Http\Controllers\ContactController::class,
+    'show'
+])->name('contact.show');
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
