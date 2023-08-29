@@ -29,6 +29,12 @@ Route::get('/contact', [
     'show'
 ])->name('contact.show');
 
+// 2nd route - form submit
+Route::post('/contact', [
+    App\Http\Controllers\ContactController::class,
+    'store'
+])->name('contact.store');
+
 
 // Route::get('/', function () {
 //     return view('welcome');
