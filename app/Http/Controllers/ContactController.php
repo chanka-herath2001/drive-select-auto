@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactRequest;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -11,9 +12,17 @@ class ContactController extends Controller
         return view('contact');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        (new ContactRequest())->create([
+            'name' => $request->get('name'),
+            'mobile' => $request->get('mobile'),
+            'email' => $request->get('email'),
+            'message' => $request->get('message'),
+        ]);
 
-        dd('Store contact details', $request->all());
-
+        return redirect()
+            ->route('contact.show')
+            ->with('success', 'Your message has been sent successfully.');
     }
 }

@@ -11,6 +11,12 @@
 
                     <div class="card-body">
 
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
                         <form action="/contact" method="POST">
                             @csrf
 
@@ -21,12 +27,14 @@
 
                             <div class="mb-3">
                                 <label for="mobile" class="form-label">Mobile</label>
-                                <input type="tel" class="form-control" name="mobile" id="mobile" placeholder="Mobile">
+                                <input type="tel" class="form-control" name="mobile" id="mobile"
+                                    placeholder="Mobile">
                             </div>
 
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
+                                <input type="email" name="email" class="form-control" id="email"
+                                    placeholder="name@example.com">
                             </div>
 
                             <div class="mb-3">
