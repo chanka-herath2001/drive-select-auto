@@ -16,14 +16,22 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::resource('/user', App\Http\Controllers\Admin\UserController::class);
+Route::resource('/user', App\Http\Controllers\Admin\UserController::class)
+->middleware([
+    'auth',
+    'role'
+]);
 
 Route::get('/dev', function () {
 
-    dd(\App\Http\Controllers\ContactController::class);
+    // dd(\App\Http\Controllers\ContactController::class);
 
-    dd('Dev');
-});
+    // dd('Dev');
+
+    return 'Development Function';
+})->middleware([
+    'auth'
+]);
 
 // Contact Form
 // 1st route - show the form
