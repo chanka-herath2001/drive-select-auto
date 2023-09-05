@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+
+Route::resource('/user', App\Http\Controllers\Admin\UserController::class);
+
 Route::get('/dev', function () {
 
     dd(\App\Http\Controllers\ContactController::class);
