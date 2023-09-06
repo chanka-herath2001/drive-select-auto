@@ -14,78 +14,18 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('\css\app.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
 
 
     <style>
-        body {}
-
-
-
-        .card-header {
-            background-color: #0E8388;
-        }
-
-        .card-header h1 {
-
-            color: #CBE4DE;
-
-            text-align: center;
-
-            padding: 10px;
-
-            border-radius: 5px 5px 0 0;
-        }
-
-        .navbar-nav .nav-link {
-            margin-right: 50px;
-            font-weight: bold;
-            color: #0E8388;
-            font-size: 15px;
-
-        }
-
-        .nav-link a:hover {
-            color: #CBE4DE;
-        }
-
-        .main-nav-bar {
+        body #app {
+            padding-top: 0 !important;
             background-color: #2C3333;
-
-        }
-
-
-        #app {
-            background-color: #fff;
-        }
-
-        .form-card {
-            background-color: #2C3333;
-
-
-
-            border-radius: 10px;
-
-            padding: 30px;
-
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-            width: 70%;
-
-
-
-            margin-top: 10px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        .form-card label {
-            color: #CBE4DE;
-        }
-
-        .form-card button {
-            background-color: #0E8388;
-            color: #CBE4DE;
-            align-items: center;
         }
 
         .form-container {
@@ -103,71 +43,35 @@
             margin-right: auto;
 
         }
-
-        .brand-card {
-
-
-            border: 2px solid #000000;
-
-            border-radius: 10px;
-
-            padding: 30px;
-
-            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
-
-            width: 80%;
-
-
-
-            margin-top: 30px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-
-        }
-
-        .brand-container {
-            margin-right: 5%;
-            margin-left: 35px;
-            margin-bottom: 20px;
-        }
-
-        .brand-card-header {
-
-            color: #2C3333;
-
-            text-align: center;
-
-            padding: 10px;
-
-            border-radius: 5px 5px 0 0;
-
-        }
-
-        .brand-card h1 {
-            font-size: 24px;
-            font-weight: bold;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-        }
-
-        .brand-card .row {
-            margin-top: 20px;
-
-        }
-
-        .brand-card img {
-            max-width: 100%;
-
-        }
-
-        .brand-card .btn {
-            width: 30%;
-            background-color: #0E8388;
-            color: #CBE4DE;
-        }
     </style>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script>
+        // Get references to the Min Price and Max Price input elements
+        const minPriceInput = document.getElementById('min_price');
+        const maxPriceInput = document.getElementById('max_price');
+
+        // Add an event listener to the form for when it's submitted
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Check if Min Price is less than 0
+            if (parseInt(minPriceInput.value) < 0) {
+                // If Min Price is less than 0, set it to 0
+                minPriceInput.value = 0;
+            }
+
+            // Check if Max Price is less than 0
+            if (parseInt(maxPriceInput.value) < 0) {
+                // If Max Price is less than 0, set it to 0
+                maxPriceInput.value = 0;
+            }
+
+            // You can add additional validation here if needed
+
+            // The form will submit as usual if all validations pass
+        });
+    </script>
+
 </head>
 
 <body>
@@ -200,6 +104,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Account</a>
                             </li>
                         </ul>
                         <!-- Right Side Of Navbar -->

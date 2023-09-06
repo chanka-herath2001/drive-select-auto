@@ -11,13 +11,13 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap.min.css">
         <!-- Your Custom CSS -->
-        <link rel="stylesheet" href="{{ asset('..\drive-select-auto\resources\css\app.css') }}">
+
     </head>
 
     <body>
         <div class="col-md-12 d-flex justify-content-center align-items-center">
             <div class="form-container">
-                <div class="row justify-content-center">
+                <div class="row">
                     <div class="col-md-6">
                         <div class="form-card">
                             <div class="card-header">
@@ -162,6 +162,74 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+            <div class="advert-container">
+                <div class="advert-content">
+                    <h1>Place Your Advert Here</h1>
+                    <p>Get the price you deserve</p>
+
+                    <!-- Input Boxes for Registration and Mileage -->
+                    <div class="mb-3">
+                        <label for="registration" class="form-label">Registration</label>
+                        <input type="text" class="form-control" id="registration" name="registration">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mileage" class="form-label">Mileage</label>
+                        <input type="number" class="form-control" id="mileage" name="mileage">
+                    </div>
+
+                    <!-- Create Advert Button -->
+                    <button type="submit" class="btn btn-primary">Create Your Advert</button>
+                </div>
+
+                <!-- Image on the Right -->
+                <div class="advert-image">
+                    <img src="images/photo-1622151834677-70f982c9adef.jpeg" alt="Advert Image">
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
 
     </body>
+    <footer class="footer  py-4 footer-extra">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Quick Links</h5>
+                    <!-- Links to Nav Bar Items -->
+
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#" class="text-light">Used Cars</a></li>
+                        <li><a href="#" class="text-light">New Cars</a></li>
+                        <li><a href="#" class="text-light">Sell Your Cars</a></li>
+                        <li><a href="#" class="text-light">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Connect with Us</h5>
+                    <!-- Social Media Links -->
+                    <div class="social-icons-wrapper">
+                        <ul class="list-unstyled social-icons d-flex ">
+                            <li><a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="text-light"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="text-light"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 DriveSelect Auto</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed by Chanka Herath</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 @endsection
