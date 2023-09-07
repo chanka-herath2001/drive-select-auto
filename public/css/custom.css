@@ -143,12 +143,14 @@ body {
     width: 30%;
     background-color: #0E8388;
     color: #CBE4DE;
+    font-family: 'Poppins', sans-serif;
 }
 
 .advert-container {
     background-color: #2C3333;
     padding: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -208,6 +210,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Style for the advert image */
@@ -221,11 +224,13 @@ body {
     color: #CBE4DE;
 }
 
+
 .social-icons i {
     font-size: 40px; 
     color: #CBE4DE;
-    padding: 10px;
+    padding: 20px;
 }
+
 
 .footer-links a {
     text-decoration: none;

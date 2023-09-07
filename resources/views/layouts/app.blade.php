@@ -81,7 +81,7 @@
             <nav class="navbar navbar-expand-md navbar-light  shadow-sm main-nav-bar">
                 <div class="container ">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="images/logo-no-background.png" alt="DriveSelect Auto" width="160px" height="40px">
+                        <img src="images/logo-no-background.png" alt="DriveSelect Auto" width="160px" height="auto">
 
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -168,7 +168,7 @@
             </nav>
         </div>
 
-        <main class="py-4">
+        <main class="pd-4">
             @yield('content')
         </main>
     </div>

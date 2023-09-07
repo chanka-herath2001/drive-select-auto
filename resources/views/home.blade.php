@@ -141,15 +141,17 @@
                     <!-- Brand Images -->
                     <div class="row">
                         <div class="col-md-3 brand-container">
-                            <a href="#"><img src="images/nissan-6-logo-png-transparent.png" alt="Brand 1"
+                            <a href="#">
+                                <img src="images/toyota-logos-brands-logotypes-0.png" alt="Brand 3"
+                                    class="img-fluid mb-2"></a>
+                        </div>
+                        <div class="col-md-3 brand-container">
+                            <a href="#">
+                                <img src="images/nissan-6-logo-png-transparent.png" alt="Brand 1"
                                     class="img-fluid mb-2"></a>
                         </div>
                         <div class="col-md-3 brand-container">
                             <a href="#"><img src="images/1280px-Suzuki_logo_2.svg.png" alt="Brand 2"
-                                    class="img-fluid mb-2"></a>
-                        </div>
-                        <div class="col-md-3 brand-container">
-                            <a href="#"><img src="images/toyota-logos-brands-logotypes-0.png" alt="Brand 3"
                                     class="img-fluid mb-2"></a>
                         </div>
                     </div>
