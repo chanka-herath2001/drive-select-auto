@@ -168,7 +168,7 @@
             </nav>
         </div>
 
-        <main class="pd-4">
+        <main class="pb-2">
             @yield('content')
         </main>
     </div>
