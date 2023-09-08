@@ -78,7 +78,7 @@
 
     <div id="app ">
         <div class="main-nav-bar">
-            <nav class="navbar navbar-expand-md navbar-light  shadow-sm main-nav-bar">
+            <nav class="navbar navbar-expand-md navbar-dark  shadow-sm main-nav-bar">
                 <div class="container ">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="images/logo-no-background.png" alt="DriveSelect Auto" width="160px" height="auto">
