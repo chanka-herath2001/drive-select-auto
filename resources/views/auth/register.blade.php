@@ -29,7 +29,6 @@
                                 <input type="hidden" name="user_type" x-model="userType">
                             </div>
 
-
                             <div class="row mb-3">
                                 <label for="name"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
@@ -57,6 +56,43 @@
                                         value="{{ old('email') }}" required autocomplete="email">
 
                                     @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="mobile"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Mobile') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="mobile" type="tel"
+                                        x-mask="0799999999"
+                                        placeholder="07"
+                                        class="form-control @error('mobile') is-invalid @enderror" name="mobile"
+                                        value="{{ old('mobile') }}" required autocomplete="mobile">
+
+                                    @error('mobile')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3" x-show="userType == 'vendor'">
+                                <label for="nic"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('NIC') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="nic" type="text"
+                                        x-mask="999999999***"
+                                        class="form-control @error('nic') is-invalid @enderror" name="nic"
+                                        value="{{ old('nic') }}" required autocomplete="nic">
+
+                                    @error('nic')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
