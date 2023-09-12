@@ -33,7 +33,7 @@
                                         <th scope="row">{{ $user->id }}</th>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>{{ config('role.' . $user->role_id) }}</td>
+                                        <td>{{ $user->role_id->name }}</td>
                                         <td>
                                             <a href="{{ route('user.edit', $user->id) }}" class="btn btn-primary btn-sm">
                                                 Edit

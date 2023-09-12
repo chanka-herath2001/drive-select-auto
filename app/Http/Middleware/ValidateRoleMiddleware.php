@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Enums\UserRole;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,17 +16,20 @@ class ValidateRoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-
         // check if an user is logged in
         if (!$request->user()) {
             return redirect()->route('login');
         }
 
-        // check if the user has the role of admin
-        if ($request->user()->role_id !== 2) {
-            abort(403, 'You are not authorized to access this page.');
+        if (
+            $request->user()->role_id == UserRole::SuperAdministrator ||
+            $request->user()->role_id == UserRole::Administrator
+        ) {
+            return $next($request);
         }
 
-        return $next($request);
+
+
+        abort(403, 'You are not authorized to access this page.');
     }
 }

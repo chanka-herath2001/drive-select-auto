@@ -60,13 +60,13 @@
                                 </label>
                                 <select class="form-control" name="role_id" id="role_id">
                                     <option value="">Select Role</option>
-                                    @foreach (config('role') as $role_id => $role)
-                                        <option value="{{ $role_id }}"
+                                    @foreach (\App\Enums\UserRole::cases() as $case)
+                                        <option value="{{ $case->value }}"
 
-                                            {{ old('role_id', $user->role_id) == $role_id
+                                            {{ old('role_id', $user->role_id->value) == $case->value
                                                 ? 'selected' : '' }}
                                             >
-                                            {{ $role }}
+                                            {{ $case->name }}
                                         </option>
                                     @endforeach
                                 </select>
