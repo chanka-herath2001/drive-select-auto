@@ -21,8 +21,29 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'email_verified_at',
         'password',
-        'role_id'
+        'role_id',
+        'status',
+        'mobile',
+        'mobile_verified_at',
+        'designation',
+        'first_name',
+        'last_name',
+        'gender',
+        'birthday',
+        'nic',
+        'license_plate_number',
+        'avatar',
+        'license_side_1',
+        'license_side_2',
+        'license_plate_number_picture',
+        'validation_papers',
+        'last_login_at',
+
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 
     /**
@@ -42,6 +63,8 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'mobile_verified_at' => 'datetime',
+        'birthday' => 'date',
         'password' => 'hashed',
         'role_id' => UserRole::class
     ];
