@@ -23,7 +23,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         // create a gate as accessAdministration
         Gate::define('accessAdministration', function () {
-            return auth()->check() && auth()->user()->role_id === 2;
+            return auth()->check() && (auth()->user()->role_id->value === 1 || auth()->user()->role_id->value === 2);
         });
     }
 }
