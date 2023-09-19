@@ -11,7 +11,11 @@
 
                         @livewire('counter-button')
 
-                        <div x-data="{
+                        @livewire('todo-list')
+
+
+
+                        {{-- <div x-data="{
                             name: 'John Doe'
                         }" class="mt-5">
 
@@ -22,9 +26,10 @@
                             <h5 x-text="name">
                                 </h1>
 
-                        </div>
+                        </div> --}}
                     </div>
 
+                <div style="height: 700px"></div>
 
                 </div>
             </div>
