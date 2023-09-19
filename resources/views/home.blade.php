@@ -9,16 +9,23 @@
 
                     <div class="card-body">
 
+                        @livewire('counter-button')
+
                         <div x-data="{
                             name: 'John Doe'
-                        }">
+                        }" class="mt-5">
+
+                            <h1>JS Version</h1>
 
                             <input type="text" class="form-control" x-model="name" />
 
-                            <h1 x-text="name"></h1>
+                            <h5 x-text="name">
+                                </h1>
 
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
