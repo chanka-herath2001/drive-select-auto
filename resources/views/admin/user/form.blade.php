@@ -7,7 +7,11 @@
 
                 <div class="card">
                     <div class="card-header">
-                        FORM TITLE (CHANGE THIS !!!!)
+                        @if ($user->id)
+                            Edit {{ $user->name }}
+                        @else
+                            Create New User
+                        @endif
                     </div>
                     <div class="card-body">
 
@@ -62,10 +66,7 @@
                                     <option value="">Select Role</option>
                                     @foreach (\App\Enums\UserRole::cases() as $case)
                                         <option value="{{ $case->value }}"
-
-                                            {{ old('role_id', $user->role_id->value) == $case->value
-                                                ? 'selected' : '' }}
-                                            >
+                                            {{ old('role_id', $user?->role_id?->value) == $case->value ? 'selected' : '' }}>
                                             {{ $case->name }}
                                         </option>
                                     @endforeach
