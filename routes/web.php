@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SubscriptionPlanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +46,22 @@ Route::post('/contact', [
     'store'
 ])->name('contact.store');
 
+Route::resource('subscription-plans', SubscriptionPlanController::class);
+
+
+
+Route::get('subscription-plans/{plan}/edit', 'SubscriptionPlanController@edit')->name('subscription-plans.edit');
+Route::get('subscription-plans/{plan}', 'SubscriptionPlanController@show')->name('subscription-plans.show');
+Route::delete('subscription-plans/{plan}', 'SubscriptionPlanController@destroy')->name('subscription-plans.destroy');
+
+
+
+
+Route::put('subscription-plans/{plan}', 'SubscriptionPlanController@update')->name('subscription-plans.update');
+
+
+
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -53,3 +69,4 @@ Route::post('/contact', [
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

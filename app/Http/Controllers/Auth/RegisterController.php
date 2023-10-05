@@ -73,5 +73,12 @@ class RegisterController extends Controller
             'role_id' => $data['user_type'] == 'vendor' ? 6 : 7,
             'password' => Hash::make($data['password']),
         ]);
+
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'role_id' => $data['Administrator'], // Assign the selected role
+        ]);
     }
 }

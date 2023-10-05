@@ -15,14 +15,14 @@
 
                             <div class="row mb-3">
                                 <div class="col-md-6 text-center"
-                                x-bind:class="userType == 'customer' ? 'bg-success text-white' : ''"
-                                x-on:click="userType = 'customer'">
+                                    x-bind:class="userType == 'customer' ? 'bg-success text-white' : ''"
+                                    x-on:click="userType = 'customer'">
                                     <i class="bi bi-person  me-3"></i>
                                     Customer
                                 </div>
                                 <div class="col-md-6 text-center"
-                                x-bind:class="userType == 'vendor' ? 'bg-success text-white' : ''"
-                                x-on:click="userType = 'vendor'">
+                                    x-bind:class="userType == 'vendor' ? 'bg-success text-white' : ''"
+                                    x-on:click="userType = 'vendor'">
                                     <i class="bi bi-building me-3"></i>
                                     Vendor
                                 </div>
@@ -68,9 +68,7 @@
                                     class="col-md-4 col-form-label text-md-end">{{ __('Mobile') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="mobile" type="tel"
-                                        x-mask="0799999999"
-                                        placeholder="07"
+                                    <input id="mobile" type="tel" x-mask="0799999999" placeholder="07"
                                         class="form-control @error('mobile') is-invalid @enderror" name="mobile"
                                         value="{{ old('mobile') }}" required autocomplete="mobile">
 
@@ -87,8 +85,7 @@
                                     class="col-md-4 col-form-label text-md-end">{{ __('NIC') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="nic" type="text"
-                                        x-mask="999999999***"
+                                    <input id="nic" type="text" x-mask="999999999***"
                                         class="form-control @error('nic') is-invalid @enderror" name="nic"
                                         value="{{ old('nic') }}" required autocomplete="nic">
 

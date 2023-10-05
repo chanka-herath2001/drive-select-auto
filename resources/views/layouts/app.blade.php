@@ -16,18 +16,77 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
+    <style>
+        body #app {
+            padding-top: 0 !important;
+
+        }
+
+        .form-container {
+            background-image: url('images/905980.jpg');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 500px;
+            width: 100%;
+
+            position: relative;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-left: 0;
+            margin-right: auto;
+
+        }
+    </style>
+
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script>
+        // Get references to the Min Price and Max Price input elements
+        const minPriceInput = document.getElementById('min_price');
+        const maxPriceInput = document.getElementById('max_price');
+
+        // Add an event listener to the form for when it's submitted
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Check if Min Price is less than 0
+            if (parseInt(minPriceInput.value) < 0) {
+                // If Min Price is less than 0, set it to 0
+                minPriceInput.value = 0;
+            }
+
+            // Check if Max Price is less than 0
+            if (parseInt(maxPriceInput.value) < 0) {
+                // If Max Price is less than 0, set it to 0
+                maxPriceInput.value = 0;
+            }
+
+            // You can add additional validation here if needed
+
+            // The form will submit as usual if all validations pass
+        });
+    </script>
+
 
     @livewireStyles
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark  shadow-sm main-nav-bar">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="images/logo-no-background.png" alt="DriveSelect Auto" width="160px" height="auto">
+
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -37,8 +96,22 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Used Cars</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">New Cars</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sell Your Cars</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Account</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -55,6 +128,9 @@
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('user.index') }}">
                                             Users
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('subscription-plans.index') }}">
+                                            Subscription Plans
                                         </a>
                                     </div>
                                 </li>
@@ -100,7 +176,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="pb-2">
             @yield('content')
         </main>
     </div>
@@ -108,4 +184,5 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     @livewireScripts
 </body>
+
 </html>

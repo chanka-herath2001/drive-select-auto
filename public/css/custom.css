@@ -1,0 +1,237 @@
+body #app {
+    padding-top: 0 !important;
+}
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.card-header {
+    background-color: #0E8388;
+}
+
+.card-header h1 {
+
+    color: #CBE4DE;
+
+    text-align: center;
+
+    padding: 10px;
+
+    border-radius: 5px 5px 0 0;
+}
+
+.navbar-nav .nav-link {
+    margin-right: 50px;
+    font-weight: bold;
+    color: #0E8388;
+
+}
+
+.main-nav-bar {
+    background-color: #2C3333;
+}
+
+
+#app {
+    background-color: #fff;
+}
+
+.form-card {
+    background-color: #2C3333;
+
+
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    width: 70%;
+    
+    margin-bottom: 10px;
+    margin-left: 100px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-card label {
+    color: #CBE4DE;
+}
+
+.form-card button {
+    background-color: #0E8388;
+    color: #CBE4DE;
+    align-items: center;
+}
+
+.form-container {
+    background-image: url('images/905980.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    width: 100%;
+
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 0;
+    margin-right: auto;
+
+}
+
+.brand-card {
+
+
+    border: 2px solid #000000;
+
+    border-radius: 5px;
+
+    padding: 30px;
+
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+
+    width: 80%;
+
+
+
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+.brand-container {
+    margin-right: 5%;
+    margin-left: 35px;
+    margin-bottom: 20px;
+}
+
+.brand-card-header {
+
+    color: #0E8388;
+
+    text-align: center;
+
+    padding: 10px;
+
+    border-radius: 5px 5px 0 0;
+
+}
+
+.brand-card h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+.brand-card .row {
+    margin-top: 20px;
+
+}
+
+.brand-card img {
+    max-width: 100%;
+
+}
+
+.brand-card .btn {
+    width: 30%;
+    background-color: #0E8388;
+    color: #CBE4DE;
+    font-family: 'Poppins', sans-serif;
+}
+
+.advert-container {
+    background-color: #2C3333;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Style for the advert content */
+.advert-content {
+    flex: 1;
+}
+
+/* Style for the headings */
+.advert-content h1 {
+    
+    margin-bottom: 10px;
+    color: #0E8388;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style for the subheading */
+.advert-content p {
+    font-size: 16px;
+    color: #CBE4DE;
+    margin-bottom: 20px;
+}
+
+/* Style for input boxes */
+.advert-content .form-label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #CBE4DE;
+}
+
+.advert-content .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    margin-right: 380px;
+    background-color: #CBE4DE;
+    border-radius: 10px;
+    width: 300px;
+}
+
+/* Style for the create advert button */
+.advert-content .btn-primary {
+    background-color: #0E8388;
+    color: #CBE4DE;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style for the advert image */
+.advert-image img {
+    max-width: 500px;
+    height: auto;
+}
+
+.footer-extra{
+    background-color: #2C3333;
+    color: #CBE4DE;
+}
+
+
+.social-icons i {
+    font-size: 40px; 
+    color: #CBE4DE;
+    padding: 20px;
+}
+
+
+.footer-links a {
+    text-decoration: none;
+}
