@@ -23,8 +23,8 @@
                                 <div class="col-md-6 text-center"
                                     x-bind:class="userType == 'vendor' ? 'bg-success text-white' : ''"
                                     x-on:click="userType = 'vendor'">
-                                    <i class="bi bi-building me-3"></i>
-                                    Vendor
+                                    <i class="bi bi-briefcase me-3"></i>
+                                    Dealer
                                 </div>
                                 <input type="hidden" name="user_type" x-model="userType">
                             </div>
@@ -80,22 +80,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3" x-show="userType == 'vendor'">
-                                <label for="nic"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('NIC') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="nic" type="text" x-mask="999999999***"
-                                        class="form-control @error('nic') is-invalid @enderror" name="nic"
-                                        value="{{ old('nic') }}" required autocomplete="nic">
-
-                                    @error('nic')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
 
                             <div class="row mb-3">
                                 <label for="password"
