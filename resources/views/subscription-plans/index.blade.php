@@ -6,8 +6,8 @@
 
         <a href="{{ route('subscription-plans.create') }}" class="btn btn-primary my-2">Create New Plan</a>
 
-        <table class="table table-bordered table-striped table-hover table-dark">
-            <thead class="thead-dark">
+        <table class="table table-bordered table-striped table-hover table-light">
+            <thead class="thead-light">
                 <tr>
                     <th>Name</th>
                     <th>Price</th>

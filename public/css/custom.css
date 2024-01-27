@@ -235,3 +235,168 @@ body {
 .footer-links a {
     text-decoration: none;
 }
+
+.used-car h1{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    color: #0E8388;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ad-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.ad-container img {
+    margin-right: 20px;
+}
+
+.ad-container h2 {
+    margin: 0 0 10px;
+    color: #164863;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+.ad-container p {
+    margin: 0 0 10px;
+    font-family: 'Poppins', sans-serif;
+}
+.ad-link{
+    text-decoration: none;
+}
+.ad-header{
+    color: #0E8388;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.ad-price {
+    color: #0E8388;
+    font-weight: bold;
+    font-size: 30px;	
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.ad-location{
+    color: #424769;
+    font-weight: bold;
+    font-size: 20px;	
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.ad-button{
+    margin-right: 100px;
+    background-color: #0E8388;
+    color: #CBE4DE;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#carouselExampleDark {
+    align-content: center;
+    width: 50%; /* Adjust this to change the width */
+    height: 500px; /* Adjust this to change the height */
+}
+#carouselExampleDark .carousel-inner {
+    height: 100%;
+}
+#carouselExampleDark .carousel-item img {
+    width: 800px;
+    object-fit: cover; /* This will ensure your images cover the whole area without stretching */
+}
+
+.ad-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px auto; /* This centers the container */
+    max-width: 60%; /* This limits the width */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.ad-details-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.ad-details-price {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.ad-details-image {
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.ad-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ad-minor-details {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.ad-details-mileage,
+.ad-details-year,
+.ad-details-brand,
+.ad-details-location,
+.ad-details-model,
+.ad-details-transmission,
+.ad-fuel-type, .ad-details-phone-number, .ad-details-email {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.ad-details-description {
+    width: 100%;
+    /* Add styles for description here */
+}

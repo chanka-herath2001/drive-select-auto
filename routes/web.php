@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubscriptionPlanController;
+use App\Http\Controllers\AdController;
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,3 +75,18 @@ Route::put('subscription-plans/{plan}', 'SubscriptionPlanController@update')->na
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/used-cars', [AdController::class, 'index'])->name('used-cars');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+
+
+Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
+
+Route::post('/ads', [AdController::class, 'store'])->name('ads.store');
+
+Route::get('/ads/{id}/click', 'AdController@click')->name('ads.click');
+
+Route::get('/ads/{id}', [AdController::class, 'showDetails'])->name('ads.showDetails');

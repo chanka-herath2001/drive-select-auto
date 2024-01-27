@@ -10,19 +10,19 @@
 
             <div class="form-group">
                 <label for="name" class="text-dark">Name</label>
-                <input type="text" class="form-control bg-dark text-light" id="name" name="name"
+                <input type="text" class="form-control bg-light text-dark" id="name" name="name"
                     value="{{ $plan->name }}" required>
             </div>
 
             <div class="form-group">
                 <label for="price" class="text-dark">Price</label>
-                <input type="text" class="form-control bg-dark text-light" id="price" name="price"
+                <input type="text" class="form-control bg-light text-dark" id="price" name="price"
                     value="{{ $plan->price }}" required>
             </div>
 
             <div class="form-group">
                 <label for="features" class="text-dark">Features</label>
-                <textarea class="form-control bg-dark text-light" id="features" name="features" rows="4" required>{{ $plan->features }}</textarea>
+                <textarea class="form-control bg-light text-dark" id="features" name="features" rows="4" required>{{ $plan->features }}</textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Update Plan</button>

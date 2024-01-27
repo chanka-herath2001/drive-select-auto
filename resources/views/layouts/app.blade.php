@@ -24,6 +24,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/_variables.scss') }}">
 
     <style>
         body #app {
@@ -98,7 +99,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Used Cars</a>
+                            <a class="nav-link" href="{{ route('used-cars') }}">Used Cars</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">New Cars</a>
@@ -107,7 +108,7 @@
                             <a class="nav-link" href="#">Sell Your Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="{{ route('about') }}">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Account</a>
