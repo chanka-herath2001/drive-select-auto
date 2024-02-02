@@ -24,12 +24,13 @@ return new class extends Migration
             $table->string('transmission', 255);
             $table->string('fuel_type', 255);
             $table->integer('year');
-            $table->string('location', 255);
+            $table->string('location');
             $table->integer('phone');
             $table->string('email', 255);
-            //$table->integer('enginecapacity');
-            $table->string('condition', 255);
+            // $table->integer('capacity');
+            $table->string('condition');
             //$table->integer('user_id')->unsigned();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             
         });
     }

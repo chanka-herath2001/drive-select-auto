@@ -4,8 +4,8 @@ body #app {
 body {
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-
 }
+
 
 .card-header {
     background-color: #0E8388;
@@ -263,6 +263,7 @@ body {
 .ad-container p {
     margin: 0 0 10px;
     font-family: 'Poppins', sans-serif;
+    width: 100%;
 }
 .ad-link{
     text-decoration: none;
@@ -271,7 +272,7 @@ body {
     color: #0E8388;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -399,4 +400,96 @@ body {
 .ad-details-description {
     width: 100%;
     /* Add styles for description here */
+}
+
+.top-ad-title {
+    color: #CBE4DE;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.top-ad-para{
+    color: #ffff;
+    font-weight: bold;
+    font-size: 20px;	
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form-post-ad{
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    width: 70%;
+}
+
+.form-label{
+    color: #164863;
+    font-weight: bold;
+    font-size: 20px;	
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form-control{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    margin-right: 380px;
+    background-color: #CBE4DE;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.form-select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    margin-right: 380px;
+    background-color: #CBE4DE;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.submit-button .btn{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    background-color: #0E8388;
+    color: #CBE4DE;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ad-title, .ad-price, .ad-location{
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 50px;
+}
+
+.ad-facts{
+    width: 100%;
+    padding: 0px;
+    font-size:20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-right: 330px;
 }

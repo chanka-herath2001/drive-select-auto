@@ -5,7 +5,7 @@
         <h2 class="ad-details-title">{{ $ad->title }}</h2>
 
         <img class="ad-details-image" src="{{ asset($ad->image) }}" alt="Ad Image" width="500px" height="auto">
-        <p class="ad-details-price">Price: {{ number_format($ad->price) }}</p>
+        <p class="ad-details-price"> Rs {{ number_format($ad->price) }}</p>
         <div class="ad-details">
             <div class="ad-minor-details">
                 <div class="column">

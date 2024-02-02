@@ -12,4 +12,14 @@ class Ad extends Model
     protected $table = 'ads';
     protected $fillable = ['title', 'image', 'mileage', 'price', 'description', 'brand', 'model', 'transmission', 'fuel_type', 'year', 'location', 'phone', 'email', 'condition'];
     protected $primaryKey = 'id';
+
+    public function userAds()
+{
+    // Retrieve the logged-in user with their ads
+    $user = Auth::user();
+    $ads = $user->ads;
+
+    return view('account', compact('ads'));
+}
+
 }

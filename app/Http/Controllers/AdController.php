@@ -4,14 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\Ad; 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdController extends Controller
 {
     
-    public function index()
+    public function userAds()
     {
-        $ads = Ad::all();
+        // Retrieve the logged-in user
+        $user = Auth::user();
+    
+        // Retrieve ads posted by the user
+        $ads = Ad::where('user_id', $user->id)->get();
+    
+        return view('account', compact('ads'));
+    }
+    public function usedCars()
+    {
+        $ads = Ad::where('condition', 'used')->get();
         return view('usedCars', compact('ads'));
+    }
+
+    public function newCars()
+    {
+        $ads = Ad::where('condition', 'new')->get();
+        return view('newCars', compact('ads'));
     }
 
 
@@ -38,11 +55,11 @@ class AdController extends Controller
             'transmission' => 'required|string',
             'fuel_type' => 'required|string',
             'year' => 'required|numeric',
-            'location' => 'required|string',
+            'location' => 'required|string|in:ampara,anuradhapura,badulla,batticaloa,colombo,galle,gampaha,hambantota,jaffna,kalutara,kandy,kegalle,kilinochchi,kurunegala,mannar,matale,matara,monaragala,mullaitivu,nuwaraeliya,polonnaruwa,puttalam,ratnapura,trincomalee,vavuniya',
             'phone' => 'required|numeric',
             'email' => 'required|email',
-            //'engine_capacity' => 'required|numeric',
-            'condition' => 'required|string',
+            // 'capacity' => 'required|numeric',
+            'condition' => 'required|string|in:new,used',
         ]);
 
 
@@ -63,6 +80,7 @@ $validatedData['image'] = 'images/' . $image->getClientOriginalName();
     // Create ad
     $ad = new Ad($validatedData);
     //$ad->user_id = auth()->user()->id;
+    $ad->user_id = auth()->user()->id;
     $ad->title = $validatedData['title'];
     $ad->image = $validatedData['image'];
     $ad->mileage = $validatedData['mileage'];
@@ -76,7 +94,7 @@ $validatedData['image'] = 'images/' . $image->getClientOriginalName();
     $ad->location = $validatedData['location'];
     $ad->phone = $validatedData['phone'];
     $ad->email = $validatedData['email'];
-    
+    // $ad->capacity = $validatedData['capacity'];
     $ad->condition = $validatedData['condition'];
     $ad->save();
 
@@ -106,6 +124,18 @@ $validatedData['image'] = 'images/' . $image->getClientOriginalName();
     //     dd($validatedData);
     // }
 
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    // Add your logic to search for ads based on the query
+    $ads = Ad::where('title', 'like', '%' . $query . '%')->get();
+
+    // Pass the search results to the view
+    return view('search-results', compact('ads', 'query'));
+}
+
+
     public function showDetails($id)
 {
     $ad = Ad::find($id);
@@ -128,4 +158,10 @@ public function show($id)
 
     return view('ads.show', compact('ad'));
 }
+
+public function __construct()
+{
+    $this->middleware('auth.ad')->only(['create', 'store']);
+}
+
 }

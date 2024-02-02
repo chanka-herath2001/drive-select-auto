@@ -11,6 +11,11 @@ use App\Enums\UserRole;
 
 class User extends Authenticatable
 {
+
+    public function ads()
+{
+    return $this->hasMany(Ad::class);
+}
     use HasApiTokens, HasFactory, Notifiable;
 
     /**

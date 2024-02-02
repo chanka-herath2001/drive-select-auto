@@ -102,16 +102,16 @@
                             <a class="nav-link" href="{{ route('used-cars') }}">Used Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">New Cars</a>
+                            <a class="nav-link" href="{{ route('new-cars') }}">New Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sell Your Cars</a>
+                            <a class="nav-link" href="{{ route('ads.create') }}">Sell Your Cars</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Account</a>
+                            <a class="nav-link" href="{{ route('account') }}">Account</a>
                         </li>
                     </ul>
 

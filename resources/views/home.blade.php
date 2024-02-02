@@ -171,17 +171,33 @@
                     <p>Get the price you deserve</p>
 
                     <!-- Input Boxes for Registration and Mileage -->
+
+                    {{-- <label for="registration" class="form-label">Registration</label>
+                        <input type="text" class="form-control" id="registration" name="registration"> --}}
                     <div class="mb-3">
-                        <label for="registration" class="form-label">Registration</label>
-                        <input type="text" class="form-control" id="registration" name="registration">
-                    </div>
-                    <div class="mb-3">
-                        <label for="mileage" class="form-label">Mileage</label>
-                        <input type="number" class="form-control" id="mileage" name="mileage">
+                        <p class="ad-facts">Your ad will reach thousands of potential buyers</p>
                     </div>
 
+                    <div class="mb-3">
+                        <p class="ad-facts">High visibility in our targeted audience</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <p class="ad-facts">Quick and easy ad creation process</p>
+                    </div>
+
+
+                    {{-- <div class="mb-3">
+                        <label for="mileage" class="form-label">Mileage</label>
+                        <input type="number" class="form-control" id="mileage" name="mileage">
+                    </div> --}}
+
+
                     <!-- Create Advert Button -->
-                    <button type="submit" class="btn btn-primary">Create Your Advert</button>
+                    <a href="{{ route('ads.create') }}" class="btn btn-primary"><button type="submit"
+                            class="btn btn-primary">Create Your Advert</button></a>
+
+
                 </div>
 
                 <!-- Image on the Right -->

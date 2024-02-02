@@ -122,4 +122,43 @@
         </div>
 
     </body>
+    <footer class="footer  py-2 footer-extra">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Quick Links</h5>
+                    <!-- Links to Nav Bar Items -->
+
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#" class="text-light">Used Cars</a></li>
+                        <li><a href="#" class="text-light">New Cars</a></li>
+                        <li><a href="#" class="text-light">Sell Your Cars</a></li>
+                        <li><a href="#" class="text-light">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Connect with Us</h5>
+                    <!-- Social Media Links -->
+                    <div class="social-icons-wrapper">
+                        <ul class="list-unstyled social-icons d-flex ">
+                            <li><a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="text-light"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="text-light"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 DriveSelect Auto</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed by Chanka Herath</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 @endsection

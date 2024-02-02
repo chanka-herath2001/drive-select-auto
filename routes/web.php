@@ -72,15 +72,24 @@ Route::put('subscription-plans/{plan}', 'SubscriptionPlanController@update')->na
 //     return view('welcome');
 // });
 
+Route::group(['middleware' => 'auth.ad'], function () {
+    // Your routes that require authentication for posting ads
+    Route::get('/post-ad', 'AdController@create')->name('ads.create');
+    Route::post('/post-ad', 'AdController@store')->name('ads.store');
+});
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/used-cars', [AdController::class, 'index'])->name('used-cars');
+Route::get('/used-cars', [AdController::class, 'usedCars'])->name('used-cars');
+
+Route::get('/new-cars', [AdController::class, 'newCars'])->name('new-cars');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/account', [AdController::class, 'userAds'])->name('account');
 
 
 Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
@@ -90,3 +99,5 @@ Route::post('/ads', [AdController::class, 'store'])->name('ads.store');
 Route::get('/ads/{id}/click', 'AdController@click')->name('ads.click');
 
 Route::get('/ads/{id}', [AdController::class, 'showDetails'])->name('ads.showDetails');
+
+Route::post('/ads/search', [AdController::class, 'search'])->name('ads.search');

@@ -69,8 +69,38 @@
             </div> --}}
 
             <div class="mb-3">
+                {{-- <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location" required> --}}
                 <label for="location" class="form-label">Location</label>
-                <input type="text" class="form-control" id="location" name="location" required>
+                <select class="form-select" id="location" name="location">
+                    <option value="district2">Any</option>
+                    <option value="district1">Ampara</option>
+                    <option value="district2">Anuradhapura</option>
+                    <option value="district1">Badulla</option>
+                    <option value="district2">Batticaloa</option>
+                    <option value="district1">Colombo</option>
+                    <option value="district2">Galle</option>
+                    <option value="district1">Gampaha </option>
+                    <option value="district2">Hambantota</option>
+                    <option value="district1">Jaffna</option>
+                    <option value="district2">Kalutara</option>
+                    <option value="district1">Kandy</option>
+                    <option value="district2">Kegalle</option>
+                    <option value="district1">Kilinochchi</option>
+                    <option value="district2">Kurunegala</option>
+                    <option value="district1">Mannar</option>
+                    <option value="district2">Matale</option>
+                    <option value="district1">Matara</option>
+                    <option value="district2">Monaragala</option>
+                    <option value="district1">Mullaitivu</option>
+                    <option value="district2">Nuwara Eliya</option>
+                    <option value="district1">Polonnaruwa</option>
+                    <option value="district2">Puttalam</option>
+                    <option value="district1">Ratnapura</option>
+                    <option value="district2">Trincomalee</option>
+                    <option value="district1">Vavuniya</option>
+
+                </select>
             </div>
 
             <div class="mb-3">
