@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ad; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\SubscriptionPlan;
 
 class AdController extends Controller
 {
@@ -16,8 +17,9 @@ class AdController extends Controller
     
         // Retrieve ads posted by the user
         $ads = Ad::where('user_id', $user->id)->get();
+        $plans = SubscriptionPlan::all();
     
-        return view('account', compact('ads'));
+        return view('account', compact('ads', 'plans'));
     }
     public function usedCars()
     {
@@ -163,5 +165,17 @@ public function __construct()
 {
     $this->middleware('auth.ad')->only(['create', 'store']);
 }
+
+public function showAccount()
+    {
+        // Fetch the subscription plans
+        $plans = SubscriptionPlan::all();
+
+        // Fetch the user's ads (if needed)
+        $ads = Ad::where('user_id', auth()->id())->get();
+
+        // Pass both data to the view
+        return view('account', compact('plans', 'ads'));
+    }
 
 }

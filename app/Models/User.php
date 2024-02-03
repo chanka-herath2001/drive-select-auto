@@ -11,11 +11,20 @@ use App\Enums\UserRole;
 
 class User extends Authenticatable
 {
+    use HasFactory, Notifiable;
+
+    
 
     public function ads()
 {
     return $this->hasMany(Ad::class);
 }
+
+public function subscriptionPlan()
+    {
+        return $this->belongsTo(SubscriptionPlan::class);
+    }
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -48,6 +57,7 @@ class User extends Authenticatable
 
         'created_at',
         'updated_at',
+        'subscription_plan_id',
         'deleted_at'
     ];
 

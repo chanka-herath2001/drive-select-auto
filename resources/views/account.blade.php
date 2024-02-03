@@ -20,22 +20,48 @@
 
 
             @auth
-                <h2>Welcome, {{ auth()->user()->name }}</h2>
-                <p>Email: {{ auth()->user()->email }}</p>
+                <h2 class="account-header">Welcome, {{ auth()->user()->name }}!</h2>
+                <p class="account-details">Email: {{ auth()->user()->email }}</p>
+                <p class="account-details">Phone: {{ auth()->user()->mobile }}</p>
                 <!-- Add other user information as needed -->
             @else
                 <p>You are not logged in.</p>
             @endauth
 
-            <h2>Your Ads</h2>
+
+            <h1 class="account-subscription-plans">Subscription Plans</h1>
+
+            <div class="subscription-plans-container">
+                @foreach ($plans as $plan)
+                    <div class="subscription-plan-card">
+                        <h3 class="subscription-plan-name">{{ $plan->name }}</h3>
+                        <p class="subscription-plan-details">{{ $plan->features }}</p>
+                        <p class="subscription-plan-price">Rs{{ $plan->price }}</p>
+
+                        @if (auth()->check())
+                            <form method="POST">
+                                @csrf
+                                <button type="submit" class="subscription-plan-button">Subscribe</button>
+                            </form>
+                        @else
+                            <p>Login to subscribe</p>
+                        @endif
+
+                        <hr>
+                    </div>
+                @endforeach
+            </div>
+
+            <h2 class="account-your-ads">Your Ads</h2>
 
             @if (count($ads) > 0)
                 @foreach ($ads as $ad)
-                    <div class="ad-container">
+                    <div class="account-ad-container">
                         <img src="{{ asset('' . $ad->image) }}" alt="Image" width="250px" height="auto">
-                        <p>{{ $ad->title }}</p>
-                        <p>Rs {{ number_format($ad->price) }}</p>
-                        <a href="{{ route('ads.showDetails', ['id' => $ad->id]) }}" target="_blank">View Ad</a>
+                        <p class="account-ad-title">{{ $ad->title }}</p>
+                        <p class="account-ad-price">Rs {{ number_format($ad->price) }}</p>
+                        <a href="{{ route('ads.showDetails', ['id' => $ad->id]) }}" target="_blank"
+                            class="account-ad-view-ad">View Ad</a>
                     </div>
                     <hr>
                 @endforeach

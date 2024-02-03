@@ -493,3 +493,146 @@ body {
     margin-bottom: 15px;
     margin-right: 330px;
 }
+
+.account-ad-container{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.account-ad-title{
+    color: #0E8388;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+.account-ad-price{
+    color: #0E8388;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 200px;
+    font-size: 20px;
+}
+
+.account-ad-view-ad{
+    color: #164863;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 200px;
+    font-size: 20px;
+}
+
+.account-header{
+    color: #0E8388;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    font-size: 32px;
+}
+
+.account-details{
+    color: #164863;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+    font-size: 20px;
+}
+
+.account-your-ads{
+    color: #0E8388;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+    font-size: 32px;
+}
+
+.account-subscription-plans{
+    color: #0E8388;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+    font-size: 32px;
+}
+
+.subscription-plan-card{
+    background-color: #CBE4DE;
+    border: 2px solid #0E8388;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+
+
+.subscription-plan-name{
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: #0E8388;
+   font-weight: bold;
+    font-size: 30px;
+}
+
+.subscription-plan-details{
+    margin-top: 20px;
+    justify-content: center;
+   align-items: center;
+   text-align: center;
+   color:#164863;
+   font-weight: bold;
+}
+
+.subscription-plan-price{
+    justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: #0E8388;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+.subscription-plan-button{
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    background-color: #0E8388;
+    color: #CBE4DE;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subscription-plans-container {
+    display: flex;
+    margin-right: 50px;/* Adjust this based on your design preference */
+}

@@ -13,6 +13,10 @@ class SubscriptionPlan extends Model
     protected $fillable = ['name', 'price', 'features'];
     protected $primaryKey = 'id';
     
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 
 
     // Define any relationships if needed

@@ -68,6 +68,7 @@ Route::put('subscription-plans/{plan}', 'SubscriptionPlanController@update')->na
 
 
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -90,6 +91,8 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/account', [AdController::class, 'userAds'])->name('account');
+
+
 
 
 Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');

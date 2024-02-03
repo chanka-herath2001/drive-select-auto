@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SubscriptionPlan;
+use App\Models\User;
 
 
 class SubscriptionPlanController extends Controller
@@ -86,6 +87,22 @@ public function show($id)
 
     return view('subscription-plans.show', compact('plan'));
 }
+
+public function subscribe($planId)
+    {
+        $plan = SubscriptionPlan::findOrFail($planId);
+
+        // Retrieve the authenticated user
+        $user = auth()->user();
+
+        // Update the user's subscription plan
+        $user->subscription_plan_id = $plan->id;
+        $user->save();
+
+        return redirect()->route('subscription-plans.index')->with('success', 'Subscribed to ' . $plan->name);
+    }
+
+
 
 
 
