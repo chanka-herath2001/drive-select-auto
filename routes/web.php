@@ -7,6 +7,7 @@ use App\Http\Controllers\AdController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,9 +61,18 @@ Route::get('subscription-plans/{plan}', 'SubscriptionPlanController@show')->name
 Route::delete('subscription-plans/{plan}', 'SubscriptionPlanController@destroy')->name('subscription-plans.destroy');
 
 
-
+Route::post('/subscribe', [SubscriptionPlanController::class, 'subscribe'])->name('subscription.subscribe');
 
 Route::put('subscription-plans/{plan}', 'SubscriptionPlanController@update')->name('subscription-plans.update');
+
+Route::post('/subscribe/{plan}', [SubscriptionPlanController::class, 'subscribe'])->name('subscribe');
+Route::get('/subscription/success', [SubscriptionPlanController::class, 'success'])->name('subscription.success');
+Route::get('/subscription/cancel', [SubscriptionPlanController::class, 'cancel'])->name('subscription.cancel');
+
+Route::post('/subscribe/{plan}', [SubscriptionPlanController::class, 'subscribe'])->name('subscription.subscribe');
+
+
+
 
 
 

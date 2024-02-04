@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SubscriptionPlan;
 use App\Models\User;
+use Stripe\Stripe;
+use Stripe\Checkout\Session;
+use Stripe\Price;
 
 
 class SubscriptionPlanController extends Controller
@@ -88,18 +91,87 @@ public function show($id)
     return view('subscription-plans.show', compact('plan'));
 }
 
-public function subscribe($planId)
+// public function subscribe($planId)
+//     {
+//         $plan = SubscriptionPlan::findOrFail($planId);
+
+//         // Retrieve the authenticated user
+//         $user = auth()->user();
+
+//         // Update the user's subscription plan
+//         $user->subscription_plan_id = $plan->id;
+//         $user->save();
+
+//         return redirect()->route('subscription-plans.index')->with('success', 'Subscribed to ' . $plan->name);
+//     }
+
+    // public function subscribe($plan)
+    // {
+    //     // Retrieve the selected plan details from the database
+    //     $selectedPlan = SubscriptionPlan::find($plan);
+
+    //     // Set your Stripe secret key
+    //     Stripe::setApiKey(config('services.stripe.secret'));
+
+    //     // Create a new Checkout Session
+    //     $checkoutSession = Session::create([
+    //         'payment_method_types' => ['card'],
+    //         'line_items' => [[
+    //             'price_data' => [
+    //                 'currency' => 'usd',
+    //                 'product_data' => [
+    //                     'name' => $selectedPlan->name,
+    //                 ],
+    //                 'unit_amount' => $selectedPlan->price * 100, // Convert to cents
+    //             ],
+    //             'quantity' => 1,
+    //         ]],
+    //         'mode' => 'subscription',
+    //         'success_url' => route('subscription.success'),
+    //         'cancel_url' => route('subscription.cancel'),
+    //     ]);
+
+    //     return response()->json(['sessionId' => $checkoutSession->id]);
+    // }
+
+    public function subscribe($plan)
+{
+    // Retrieve the selected plan details from the database
+    $selectedPlan = SubscriptionPlan::find($plan);
+
+    // Set your Stripe secret key
+    Stripe::setApiKey(config('services.stripe.secret'));
+
+    // Fetch the Price details from Stripe using the stripe_price_id
+    $price = Price::retrieve($selectedPlan->stripe_price_id);
+
+    // Create a new Checkout Session with detailed price data
+    $checkoutSession = Session::create([
+        'payment_method_types' => ['card'],
+        'line_items' => [[
+            'price' => $price->id, // Use the retrieved Price ID
+            'quantity' => 1,
+        ]],
+        'mode' => 'subscription',
+        'success_url' => route('subscription.success'),
+        'cancel_url' => route('subscription.cancel'),
+    ]);
+
+    return response()->json(['sessionId' => $checkoutSession->id]);
+}
+
+
+
+    public function success()
     {
-        $plan = SubscriptionPlan::findOrFail($planId);
+        // Logic for successful payment
+        return view('payment.success');
+    }
 
-        // Retrieve the authenticated user
-        $user = auth()->user();
-
-        // Update the user's subscription plan
-        $user->subscription_plan_id = $plan->id;
-        $user->save();
-
-        return redirect()->route('subscription-plans.index')->with('success', 'Subscribed to ' . $plan->name);
+    public function cancel()
+    {
+        // Logic for canceled payment
+        return view('payment.cancel');
     }
 
 

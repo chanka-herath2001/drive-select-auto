@@ -10,7 +10,7 @@ class SubscriptionPlan extends Model
     use HasFactory;
 
     protected $table = 'subscription_plans';
-    protected $fillable = ['name', 'price', 'features'];
+    protected $fillable = ['name', 'price', 'features', 'stripe_price_id'];
     protected $primaryKey = 'id';
     
     public function users()

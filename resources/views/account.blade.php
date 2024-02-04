@@ -39,13 +39,68 @@
                         <p class="subscription-plan-price">Rs{{ $plan->price }}</p>
 
                         @if (auth()->check())
-                            <form method="POST">
+                            <form method="POST" action="{{ route('subscription.subscribe', ['plan' => $plan->id]) }}"
+                                id="subscription-form">
                                 @csrf
+                                <input type="hidden" name="plan_id" value="{{ $plan->id }}">
                                 <button type="submit" class="subscription-plan-button">Subscribe</button>
                             </form>
                         @else
                             <p>Login to subscribe</p>
                         @endif
+                        {{-- <script src="https://js.stripe.com/v3/"></script>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const stripe = Stripe('{{ config('services.stripe.key') }}');
+                                    const elements = stripe.elements();
+
+                                    const style = {
+                                        base: {
+                                            color: '#32325d',
+                                            fontFamily: 'Arial, sans-serif',
+                                            fontSmoothing: 'antialiased',
+                                            fontSize: '16px',
+                                            '::placeholder': {
+                                                color: '#32325d',
+                                            },
+                                        },
+                                        invalid: {
+                                            color: '#fa755a',
+                                            iconColor: '#fa755a',
+                                        },
+                                    };
+
+                                    const card = elements.create('card', {
+                                        style
+                                    });
+                                    card.mount('#card-element');
+
+                                    const form = document.getElementById('subscription-form');
+                                    const subscribeButton = document.getElementById('subscribe-button');
+
+                                    subscribeButton.addEventListener('click', async () => {
+                                        const {
+                                            token,
+                                            error
+                                        } = await stripe.createToken(card);
+
+                                        if (error) {
+                                            console.error(error);
+                                        } else {
+                                            // Add the token to the form and submit
+                                            const hiddenInput = document.createElement('input');
+                                            hiddenInput.setAttribute('type', 'hidden');
+                                            hiddenInput.setAttribute('name', 'token');
+                                            hiddenInput.setAttribute('value', token.id);
+                                            form.appendChild(hiddenInput);
+                                            form.submit();
+                                        }
+                                    });
+                                });
+                            </script> --}}
+                        {{-- @else
+                        <p>Login to subscribe</p>
+                @endif --}}
 
                         <hr>
                     </div>
