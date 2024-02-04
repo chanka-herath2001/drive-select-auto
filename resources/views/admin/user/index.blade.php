@@ -40,12 +40,11 @@
                                             </a>
 
                                             <form action="{{ route('user.destroy', $user->id) }}"
-                                                id="delete-form-{{ $user->id }}"
-                                                method="post">
+                                                id="delete-form-{{ $user->id }}" method="post">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button class="btn btn-danger btn-sm" type="button"
-                                                onclick="confirm('Are you sure ?') ? document.getElementById('delete-form-{{ $user->id }}').submit() : ''">
+                                                    onclick="confirm('Are you sure ?') ? document.getElementById('delete-form-{{ $user->id }}').submit() : ''">
                                                     Delete
                                                 </button>
                                             </form>

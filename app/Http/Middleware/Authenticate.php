@@ -6,6 +6,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\AnalyticsController;
 
 class Authenticate extends Middleware
 {

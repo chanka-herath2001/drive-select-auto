@@ -78,7 +78,8 @@
     </script>
 
 
-    @livewireStyles
+    {{-- @livewireStyles --}}
+    @livewireScripts
 </head>
 
 <body>
@@ -127,12 +128,16 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('admin.user.dashboard.index') }}">
+                                            Dashboard
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('user.index') }}">
                                             Users
                                         </a>
                                         <a class="dropdown-item" href="{{ route('subscription-plans.index') }}">
                                             Subscription Plans
                                         </a>
+                                        <a class="dropdown-item" href="{{ route('admin.analytics.index') }}">Analytics</a>
                                     </div>
                                 </li>
                             @endcan
