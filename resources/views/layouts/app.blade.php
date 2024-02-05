@@ -129,7 +129,7 @@
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('admin.user.dashboard.index') }}">
-                                            Dashboard
+                                            Analytics
                                         </a>
                                         <a class="dropdown-item" href="{{ route('user.index') }}">
                                             Users
@@ -137,7 +137,7 @@
                                         <a class="dropdown-item" href="{{ route('subscription-plans.index') }}">
                                             Subscription Plans
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('admin.analytics.index') }}">Analytics</a>
+                                        {{-- <a class="dropdown-item" href="{{ route('admin.analytics.index') }}">Analytics</a> --}}
                                     </div>
                                 </li>
                             @endcan

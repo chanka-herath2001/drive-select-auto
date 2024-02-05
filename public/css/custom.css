@@ -348,15 +348,19 @@ body {
 }
 
 .ad-details-title {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
+    color: #0E8388;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 .ad-details-price {
-    color: #666;
-    font-size: 18px;
-    margin-bottom: 10px;
+    color: #424769;
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .ad-details-image {
@@ -368,6 +372,8 @@ body {
 
 .ad-details {
     display: flex;
+    font-family: 'Poppins', sans-serif;
+    color: #164863;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -392,7 +398,7 @@ body {
 .ad-details-model,
 .ad-details-transmission,
 .ad-fuel-type, .ad-details-phone-number, .ad-details-email {
-    color: #666;
+    color: #164863;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -778,4 +784,14 @@ body {
     margin-bottom: 20px;
     margin-left: 0px;
     font-size: 20px;
+  }
+
+  .ad-description{
+    color: #164863;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    font-size: 16px;
   }

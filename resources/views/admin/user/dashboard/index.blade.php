@@ -9,7 +9,7 @@
                     <h6 class="alert alert-success">{{ session('message') }}</h6>
                 @endif
                 <div class="me-md-3 me-xl-5">
-                    <h2 class="font-weight-bold mb-0 analytics-header">Analytics Dashboard</h2>
+                    <h2 class="font-weight-bold mb-0 analytics-header">Analytics</h2>
                     <p class="mb-md-0 analytics-sub-header">Basic Overview</p>
                 </div>
                 <div class="row">

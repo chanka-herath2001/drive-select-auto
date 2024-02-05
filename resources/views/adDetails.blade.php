@@ -16,14 +16,14 @@
                     <p class="ad-details-email">Email: {{ $ad->email }}</p>
                 </div>
                 <div class="column">
-                    <p class="ad-details-location">Location: {{ $ad->location }}</p>
+                    <p class="ad-details-location text-capitalize">Location: {{ $ad->location }}</p>
                     <p class="ad-details-model">Model: {{ $ad->model }}</p>
                     <p class="ad-details-transmission">Transmission: {{ $ad->transmission }}</p>
                     <p class="ad-fuel-type">Fuel Type: {{ $ad->fuel_type }}</p>
                 </div>
             </div>
             <div class="ad-details-description">
-                <p>{{ $ad->description }}</p>
+                <p class="ad-description">{{ $ad->description }}</p>
                 <!-- Add description here -->
             </div>
         </div>
