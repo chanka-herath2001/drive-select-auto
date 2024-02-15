@@ -129,12 +129,10 @@ $validatedData['image'] = 'images/' . $image->getClientOriginalName();
     public function search(Request $request)
 {
     $query = $request->input('query');
-
-    // Add your logic to search for ads based on the query
     $ads = Ad::where('title', 'like', '%' . $query . '%')->get();
 
-    // Pass the search results to the view
-    return view('search-results', compact('ads', 'query'));
+    // Pass the search results to the Blade view
+    return view('search', ['ads' => $ads]);
 }
 
 
@@ -177,5 +175,41 @@ public function showAccount()
         // Pass both data to the view
         return view('account', compact('plans', 'ads'));
     }
+
+
+    public function liveSearch(Request $request)
+{
+    $query = $request->input('query');
+    $ads = Ad::where('title', 'like', '%' . $query . '%')->get();
+
+    // Return a Blade view with the live search results
+    return view('live-search', ['ads' => $ads]);
+}
+
+public function newLiveSearch(Request $request)
+{
+    $query = $request->input('query');
+    
+    // Assuming 'condition' is a column in your 'ads' table
+    $ads = Ad::where('title', 'like', '%' . $query . '%')
+              ->where('condition', 'new') // Adjust this condition as needed
+              ->get();
+
+    // Return a Blade view with the live search results
+    return view('new-live-search', ['ads' => $ads]);
+}
+
+public function usedLiveSearch(Request $request)
+{
+    $query = $request->input('query');
+    
+    // Assuming 'condition' is a column in your 'ads' table
+    $ads = Ad::where('title', 'like', '%' . $query . '%')
+              ->where('condition', 'used') // Adjust this condition as needed
+              ->get();
+
+    // Return a Blade view with the live search results
+    return view('new-live-search', ['ads' => $ads]);
+}
 
 }

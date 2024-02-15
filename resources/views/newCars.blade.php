@@ -13,9 +13,51 @@
         <!-- Your Custom CSS -->
 
         <link rel="stylesheet" href="{{ asset('css/_variables.scss') }}">
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     </head>
 
     <body class="body">
+
+        {{-- <div class="search-container">
+            <form action="{{ route('search') }}" method="GET" class="search-form">
+                <input type="text" name="query" placeholder="Search for a car...">
+                <button type="submit">Search</button>
+            </form>
+        </div> --}}
+
+        <div class="search-container">
+            <form action="{{ route('liveSearch') }}" method="GET" class="search-form">
+                <input type="text" name="query" id="searchQuery" placeholder="Search for a car...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div id="liveSearchResults" class="container"></div>
+
+        <script>
+            $(document).ready(function() {
+                // Add an input event listener to the search input
+                $('#searchQuery').on('input', function() {
+                    // Get the current value of the input
+                    var query = $(this).val();
+
+                    // Make an Ajax request to fetch search results
+                    $.ajax({
+                        type: 'GET',
+                        url: '{{ route('newLiveSearch') }}', // Replace with your live search route
+                        data: {
+                            query: query
+                        },
+                        success: function(response) {
+                            // Update the live search results container with the received data
+                            $('#liveSearchResults').html(response);
+                        }
+                    });
+                });
+            });
+        </script>
+
         <div class="col-md-12 d-flex align-items-center pl-3 flex-container">
             <div class="used-car">
                 <h1>Top Selling new cars</h1>

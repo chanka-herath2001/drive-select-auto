@@ -135,7 +135,6 @@ Route::get('/ads/{id}/click', 'AdController@click')->name('ads.click');
 
 Route::get('/ads/{id}', [AdController::class, 'showDetails'])->name('ads.showDetails');
 
-Route::post('/ads/search', [AdController::class, 'search'])->name('ads.search');
 
 Route::get('/track-page-view', [AnalyticsController::class, 'trackPageView']);
 Route::get('/analytics/track-click/{adId}', [AnalyticsController::class, 'trackClick']);
@@ -143,3 +142,14 @@ Route::get('/analytics/track-click/{adId}', [AnalyticsController::class, 'trackC
 // Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'admin.user.dashboard.index'])->name('admin.user.dashboard.index');
 
 Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.user.dashboard.index');
+
+// In your web.php file
+Route::get('search', [AdController::class, 'search'])->name('search');
+
+Route::get('live-search', [AdController::class, 'liveSearch'])->name('liveSearch');
+
+Route::get('used-live-search', [AdController::class, 'usedLiveSearch'])->name('usedLiveSearch');
+
+// New route for new cars live search
+Route::get('new-live-search', [AdController::class, 'newLiveSearch'])->name('newLiveSearch');
+
